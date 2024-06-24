@@ -1,0 +1,33 @@
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <sidebar></sidebar>
+    </div>
+    <div class="col-9">
+      <div *ngIf="likedVideos && likedVideos.length > 0; else emptypage">
+          <div class="cards">
+            <div class="card" *ngFor="let video of videos" (click)="onVideoClick(video._id)">
+              <img class="card-img-top" [src]="video?.thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <div class="media">
+                  <!-- <div class="user-img" [style.background-image]="'url(' + video.owner.avatar + ')'"></div> -->
+                  <div class="media-body">
+                    <h5 class="mt-0">{{ video?.title }}</h5>
+                    <p class="views">{{video?.views}} Views  <span><i class="bi bi-dot"></i></span>  {{video?.createdAt | relativeTime}}</p>
+                    <p>{{ video?.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <ng-template #emptypage>
+        <div class="text-center no-videos">
+          <img src="https://res.cloudinary.com/dcxj8iqvr/image/upload/v1718955726/mttcxt2jszexqrluo1lm.png" alt="No liked videos">
+          <p>No liked videos yet!</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

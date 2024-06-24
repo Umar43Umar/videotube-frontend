@@ -1,0 +1,40 @@
+.card{
+  background: black;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  
+}
+img{
+  height: 50px;
+  width: auto;
+  align-self: center;
+}
+input{
+  background: black;
+}
+label{
+  color: white;
+}
+.btn-purple{
+  background-color: #ae7aff;
+  color: black;
+  font-weight: bold;
+}
+.btn-black{
+  background-color: black;
+  color: #ae7aff;
+  font-weight: bold;
+  border: 1px solid white;
+}
+.input{
+  background-color: black;
+  color: white;
+}

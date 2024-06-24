@@ -1,0 +1,89 @@
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+        <icons-sidebar></icons-sidebar>
+    </div>
+    <div class="col-7">
+      <div class="video" *ngIf="this.video">
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
+
+          <video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin>
+            <source [src]="this.video.videoFile" type="video/mp4">
+          </video>
+
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-scrub-bar>
+              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-track-selector></vg-track-selector>
+            <vg-volume>
+              <vg-mute></vg-mute>
+              <vg-volume-bar></vg-volume-bar>
+            </vg-volume>
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
+        </vg-player>
+      </div>
+      <!-- <div class="card">
+        <div class="card-body">
+          <div class="1">
+            <div>
+              <h5 class="card-title">{{video?.title}}</h5>
+              <p class="card-text">{{video?.views}} Views  <span><i class="bi bi-dot"></i></span>  {{video?.createdAt | relativeTime}}</p>
+            </div>
+            <div class="like">
+
+            </div>
+          </div>
+          <div class="2">
+            <div class="media">
+            <div class="user-img" [style.background-image]="'url(' + video?.owner.avatar + ')'"></div>
+            <div class="media-body">
+              <h5 class="mt-0">{{user?.fullName}}</h5>
+              <p>{{user?.subscribersCount}} Followers</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="card">
+        <div class="card-body d-flex justify-content-between">
+            <div class="left-content">
+              <h5 class="card-title">{{video?.title}}</h5>
+              <p class="card-text">{{video?.views}} Views  <span><i class="bi bi-dot"></i></span>  {{video?.createdAt | relativeTime}}</p>
+              <div class="media">
+                <div class="user-img" [style.background-image]="'url(' + video?.owner.avatar + ')'"></div>
+                <div class="media-body d-flex align-items-center">
+                  <div>
+                    <h5 class="mt-0 mb-1">{{user?.fullName}}</h5>
+                    <p class="mb-1">{{subscribersCount}} Followers</p>
+                  </div>
+                  <ng-container *ngIf="subscribed; else followButton">
+                    <a class="btn btn-black ml-3 align-self-center" (click)="toggleSubscription()">Followed</a>
+                  </ng-container>
+                  <ng-template #followButton >
+                    <a class="btn btn-purple ml-3 align-self-center" (click)="toggleSubscription()"><span><i class="bi bi-person-add"></i></span> Follow</a>
+                  </ng-template>
+                </div>
+              </div>              
+            </div>
+            <div class="right-content text-right">
+                <a (click)="toggleLike()">
+                  {{video?.likeCount}} 
+                  <i [ngClass]="liked ? 'bi bi-hand-thumbs-up active' : 'bi bi-hand-thumbs-up'"></i>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,73 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
+  border-bottom: 1px solid #dddddd; /* Optional: Add a bottom border */
+  padding: 10px 0; /* Optional: Adjust padding as needed */
+  background: black;
+}
+.input-group-text{
+  color: white;
+  background: black;
+  border-right: none;
+}
+li{
+  cursor: pointer;
+}
+.logo{
+  height: 50px;
+  width: auto;
+}
+.search-input {
+  background-color: black;
+  color: white;
+  border-left: none;
+}
+.btn{
+  color: white;
+  font-weight: bold;
+}
+.btn-purple{
+  background-color: #ae7aff;
+  color: black;
+  box-shadow: 0px 8px 15px rgba(109, 108, 108, 0.9);
+}
+.avatar {
+  cursor: pointer;
+}
+img{
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu.active {
+  display: block;
+  border: 1px solid white;
+}
+
+.dropdown-item {
+  color: white;
+  padding: 5px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #ae7aff;
+}

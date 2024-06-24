@@ -1,0 +1,30 @@
+.sidebar {
+  position: sticky; /* Make the sidebar sticky */
+  top: 72px; /* Stick to the top of the viewport */
+  height: calc(100vh - 100px); /* Adjust height as needed */
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  height: 86.25vh; 
+  justify-content: space-between; 
+}
+.ul-1{
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+.ul-2 {
+  margin-top: auto; 
+  margin-right: 2rem;
+}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.25rem 0.25rem;
+  margin: 0.5rem 0rem;
+  cursor: pointer;
+  text-align: center;
+}

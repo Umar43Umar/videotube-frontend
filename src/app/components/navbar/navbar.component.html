@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <div class="row w-100">
+      <div class="col-md-4 d-flex align-items-center">
+       <a routerLink="/"><img src="https://res.cloudinary.com/dcxj8iqvr/image/upload/v1718453273/r4vnoc8uaifkegcopred.jpg" alt="" class="img-fluid logo"></a> 
+      </div>
+      <div class="col-md-4 d-flex align-items-center">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+          </div>
+          <input type="text" class="form-control search-input" placeholder="Search">
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-center justify-content-end">
+        <a routerLink="/login" class="btn mr-2" *ngIf="!this.isLoggedIn">Login</a>
+        <a routerLink="/register" class="btn btn-purple"*ngIf="!this.isLoggedIn">Sign Up</a>
+        <!-- <button class="btn mr-2" (click)="logout()" *ngIf="this.isLoggedIn">Logout</button> -->
+        <!-- <div class="avatar" [style.background-image]="'url(' + avatar + ')'" *ngIf="this.isLoggedIn"></div> -->
+        <div class="dropdown" *ngIf="this.isLoggedIn">
+          <div class="avatar" (click)="toggleDropdown()">
+            <img src={{avatar}}>
+          </div>
+          <div class="dropdown-menu" [ngClass]="{ 'active': isDropdownOpen }">
+            <li class="dropdown-item" routerLink="/my-profile">Profile</li>
+            <li class="dropdown-item" href="#">Settings</li>
+            <li class="dropdown-item" href="#" (click)="logout()">Logout</li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

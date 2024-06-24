@@ -1,0 +1,18 @@
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <sidebar></sidebar>
+    </div>
+    <div class="col-9">
+      <div *ngIf="historyVideos && historyVideos.length > 0; else emptypage">
+      </div>
+      <ng-template #emptypage>
+        <div class="text-center no-videos">
+          <img src="https://res.cloudinary.com/dcxj8iqvr/image/upload/v1718955726/mttcxt2jszexqrluo1lm.png" alt="No liked videos">
+          <p>No history videos yet!</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
